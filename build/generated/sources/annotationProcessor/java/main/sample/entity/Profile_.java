@@ -1,7 +1,7 @@
 package sample.entity;
 
 /** */
-@javax.annotation.Generated(value = { "Doma", "2.49.0" }, date = "2021-10-14T17:40:50.710-0300")
+@javax.annotation.Generated(value = { "Doma", "2.49.0" }, date = "2021-10-17T20:06:26.743-0300")
 public final class Profile_ implements org.seasar.doma.jdbc.criteria.metamodel.EntityMetamodel<sample.entity.Profile> {
 
     static {
