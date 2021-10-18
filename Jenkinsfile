@@ -14,7 +14,8 @@ pipeline {
 
         echo '3. Ejecutar el .jar'
         sh '''export BUILD_ID=dontKillMe
-nohup SERVER_PORT=8888 ./gradlew bootRun &'''
+export SERVER_PORT=8888
+nohup ./gradlew bootRun &'''
         sleep 20
         sh 'tail nohup.out'
       }
