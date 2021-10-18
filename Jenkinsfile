@@ -10,6 +10,25 @@ pipeline {
         sh 'git checkout main'
         sh './gradlew build'
         echo '3. Ejecutar el .jar'
+        sh './gradlew bootRun'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh './gradlew test'
+      }
+    }
+
+    stage('Validate') {
+      steps {
+        echo 'Stage de validación'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Stage de Deploy'
       }
     }
 
