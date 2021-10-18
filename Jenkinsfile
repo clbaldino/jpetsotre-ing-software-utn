@@ -3,14 +3,20 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo '1. Clonar repositorio/pull de la branch main'
+        echo 'a. Clonar repositorio/pull de la branch main'
         git(url: 'https://github.com/clbaldino/jpetsotre-ing-software-utn.git', branch: 'main', credentialsId: 'clbaldino')
         sh 'git pull https://github.com/clbaldino/jpetsotre-ing-software-utn.git'
-        echo '2. Compilar con gradle'
         sh 'git checkout main'
-        sh './gradlew build'
+        echo 'b. Compilar con gradle'
+        catchError() {
+          sh './gradlew build'
+        }
+
         echo '3. Ejecutar el .jar'
-        sh 'SERVER_PORT=8888 ./gradlew bootRun'
+        timeout(time: 30) {
+          sh 'SERVER_PORT=8888 ./gradlew bootRun'
+        }
+
       }
     }
 
