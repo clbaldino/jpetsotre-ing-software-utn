@@ -10,7 +10,7 @@ pipeline {
         sh 'git checkout main'
         sh './gradlew build'
         echo '3. Ejecutar el .jar'
-        sh './gradlew bootRun'
+        sh 'SERVER_PORT=8888 ./gradlew bootRun'
       }
     }
 
@@ -22,7 +22,7 @@ pipeline {
 
     stage('Validate') {
       steps {
-        echo 'Stage de validación'
+        echo 'Stage de validaciÃ³n'
       }
     }
 
