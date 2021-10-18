@@ -9,9 +9,9 @@ pipeline {
         echo '2. Compilar con gradle'
         sh '''git checkout main
 ls'''
-        sh 'cd jpetsotre-ing-software-utn'
-        sh '''gradle build
+        sh '''cd jpetsotre-ing-software-utn
 ls'''
+        sh 'gradle build'
         echo '3. Ejecutar el .jar'
         sh 'sleep 5'
         sh './gradlew bootRun'
