@@ -4,8 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'git checkout main'
-        sh '''su - jenkins
-git pull git@github.com:clbaldino/jpetsotre-ing-software-utn.git'''
+        sh 'git clone git@github.com:clbaldino/jpetsotre-ing-software-utn.git'
         sh 'cd jpetsotre-ing-software-utn'
         sh 'gradle build'
         sleep 5
