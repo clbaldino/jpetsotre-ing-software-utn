@@ -8,7 +8,6 @@ pipeline {
         sh 'git pull https://github.com/clbaldino/jpetsotre-ing-software-utn.git'
         echo '2. Compilar con gradle'
         sh 'git checkout main'
-        sh 'gradle init'
         build 'gradle build'
         sh 'gradle build'
         echo '3. Ejecutar el .jar'
